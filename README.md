@@ -203,6 +203,8 @@ All augmentations are applied during training only, tuned specifically for MRI c
 
 ### Download
 
+📘 For the complete project setup, troubleshooting, and testing instructions, please refer to `SETUP.md`.
+
 The dataset and pre-trained model weights are hosted on Google Drive. Pick whichever works for you:
 
 | Option | Link |
