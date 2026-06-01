@@ -11340,7 +11340,7 @@ section {
     height: 100%;
 }
 
-/* Purple: FROM Encoder E4 (left) INTO Bottleneck */
+
 .connector-curve.left {
     left: -225px;
     bottom: -580px;
@@ -11350,7 +11350,7 @@ section {
     width: 75%;
 }
 
-/* Arrow tip for purple connector (pointing right/down toward bottleneck) */
+
 .connector-curve.left::after {
     content: '>';
     position: absolute;
@@ -11365,7 +11365,6 @@ section {
     padding: 0 3px;
 }
 
-/* Green: FROM Bottleneck TO Decoder D1 (right) */
 .connector-curve.right {
     right: -210px;
     top: -340px;
@@ -11375,7 +11374,7 @@ section {
     width: 75%;
 }
 
-/* Arrow tip for green connector (pointing right/down toward decoder) */
+
 .connector-curve.right::after {
     content: '>';
     position: absolute;
