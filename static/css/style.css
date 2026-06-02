@@ -2286,11 +2286,17 @@ section {
     align-items: flex-end;
 }
 
-.bottleneck-block {
-    width: 28px;
-    height: 25px;
-    background: linear-gradient(180deg, #f59e0b, #fbbf24);
-    border-radius: 0.25rem;
+.bottleneck-block-resnet {
+   background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    box-shadow: 
+        0 10px 40px rgba(99, 102, 241, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    overflow: hidden;
 }
 
 .skip-connections {
