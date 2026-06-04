@@ -61,8 +61,8 @@ def generate_statistics(df: pd.DataFrame) -> dict:
 def _is_corrupted(img_path: str, mask_path: str) -> tuple[bool, str]:
     """
     Returns (is_corrupted, reason).
-    Checks: file exists, OpenCV can read it, image is not blank.
-    """
+    Checks: file exists, OpenCV can read it, image is not blank. 
+    """ 
     for label, path in [("image", img_path), ("mask", mask_path)]:
         full = os.path.join(IMG_ROOT, path)
         if not os.path.isfile(full):
@@ -70,9 +70,9 @@ def _is_corrupted(img_path: str, mask_path: str) -> tuple[bool, str]:
         img = cv2.imread(full, cv2.IMREAD_GRAYSCALE)
         if img is None:
             return True, f"{label}_unreadable"
-        if img.std() < 1.0:
+        if label == "image" and img.std() < 1.0:
             return True, f"{label}_blank"
-    return False, ""
+    return False, "" 
 
 
 def filter_corrupted(df: pd.DataFrame) -> tuple[pd.DataFrame, list]:
