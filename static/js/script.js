@@ -3,6 +3,22 @@
 // ==================== Configuration ====================
 const API_BASE_URL = 'http://localhost:5000';
 
+// ==================== Theme ====================
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+} else {
+    const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+    ).matches;
+
+    document.documentElement.setAttribute(
+        'data-theme',
+        prefersDark ? 'dark' : 'light'
+    );
+}
+
 // ==================== State Management ====================
 let uploadedFile = null;
 let currentResults = null;
@@ -2064,3 +2080,41 @@ window.NeuroScanAI = {
     showHistoryPanel,
     saveToHistory
 };
+
+const themeToggle = document.getElementById('theme-toggle');
+
+if (themeToggle) {
+    updateThemeIcon();
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme =
+            document.documentElement.getAttribute('data-theme');
+
+        const newTheme =
+            currentTheme === 'dark'
+                ? 'light'
+                : 'dark';
+
+        document.documentElement.setAttribute(
+            'data-theme',
+            newTheme
+        );
+
+        localStorage.setItem(
+            'theme',
+            newTheme
+        );
+
+        updateThemeIcon();
+    });
+}
+
+function updateThemeIcon() {
+    const currentTheme =
+        document.documentElement.getAttribute('data-theme');
+
+    themeToggle.textContent =
+        currentTheme === 'dark'
+            ? '☀️'
+            : '🌙';
+}
