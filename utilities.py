@@ -72,7 +72,7 @@ def augment_mri(img, mask, config=None):
             alpha=1, sigma=50, p=0.3))
 
     if config.get("gaussian_noise"):
-        aug_list.append(A.GaussNoise(var_limit=(10.0, 50.0), p=0.4))
+        aug_list.append(A.GaussNoise(std_range=(0.04, 0.22), p=0.4))
 
     if config.get("gamma_correction"):
         aug_list.append(A.RandomGamma(gamma_limit=(80, 120), p=0.4))
