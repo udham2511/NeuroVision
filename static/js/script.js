@@ -2081,40 +2081,88 @@ window.NeuroScanAI = {
     saveToHistory
 };
 
+
+// ==================== Theme Toggle ====================
+
 const themeToggle = document.getElementById('theme-toggle');
 
 if (themeToggle) {
-    updateThemeIcon();
-
-    themeToggle.addEventListener('click', () => {
-        const currentTheme =
-            document.documentElement.getAttribute('data-theme');
-
-        const newTheme =
-            currentTheme === 'dark'
-                ? 'light'
-                : 'dark';
-
-        document.documentElement.setAttribute(
-            'data-theme',
-            newTheme
-        );
-
-        localStorage.setItem(
-            'theme',
-            newTheme
-        );
-
-        updateThemeIcon();
-    });
+    updateThemeTooltip();
+    themeToggle.addEventListener('click', animateThemeToggle);
 }
 
-function updateThemeIcon() {
+function animateThemeToggle() {
+
+    const nodes = [
+        document.querySelector('.node-1'),
+        document.querySelector('.node-2'),
+        document.querySelector('.node-3'),
+        document.querySelector('.node-4')
+    ];
+
+    nodes.forEach((node, index) => {
+
+        setTimeout(() => {
+
+            node.classList.add('pulse');
+
+            setTimeout(() => {
+                node.classList.remove('pulse');
+            }, 200);
+
+        }, index * 80);
+
+    });
+
+    setTimeout(() => {
+
+        const center = document.querySelector('.nn-center');
+
+        center.classList.add('center-pulse');
+
+        setTimeout(() => {
+
+            center.classList.remove('center-pulse');
+
+            const currentTheme =
+                document.documentElement.getAttribute('data-theme');
+
+            const newTheme =
+                currentTheme === 'dark'
+                    ? 'light'
+                    : 'dark';
+
+            document.documentElement.setAttribute(
+                'data-theme',
+                newTheme
+            );
+
+            localStorage.setItem(
+                'theme',
+                newTheme
+            );
+
+            updateThemeTooltip();
+
+        }, 250);
+
+    }, 350);
+}
+
+function updateThemeTooltip() {
+
     const currentTheme =
         document.documentElement.getAttribute('data-theme');
 
-    themeToggle.textContent =
+    themeToggle.title =
         currentTheme === 'dark'
-            ? '☀️'
-            : '🌙';
+            ? 'Switch to Light Mode'
+            : 'Switch to Dark Mode';
+
+    themeToggle.setAttribute(
+        'aria-label',
+        currentTheme === 'dark'
+            ? 'Switch to Light Mode'
+            : 'Switch to Dark Mode'
+    );
 }

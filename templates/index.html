@@ -44,8 +44,23 @@
                         <i class="fas fa-history"></i>
                         <span>History</span>
                     </button>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-                        🌙
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+                        <svg class="theme-network-icon" width="28" height="28" viewBox="0 0 48 48">
+                            <!-- edges -->
+                            <line x1="12" y1="14" x2="24" y2="24" class="nn-edge"/>
+                            <line x1="36" y1="14" x2="24" y2="24" class="nn-edge"/>
+                            <line x1="12" y1="34" x2="24" y2="24" class="nn-edge"/>
+                            <line x1="36" y1="34" x2="24" y2="24" class="nn-edge"/>
+
+                            <!-- corner nodes -->
+                            <circle cx="12" cy="14" r="4" class="nn-node node-1"/>
+                            <circle cx="36" cy="14" r="4" class="nn-node node-2"/>
+                            <circle cx="12" cy="34" r="4" class="nn-node node-3"/>
+                            <circle cx="36" cy="34" r="4" class="nn-node node-4"/>
+
+                            <!-- center node -->
+                            <circle cx="24" cy="24" r="5.5" class="nn-center"/>
+                        </svg>
                     </button>
                     <button id="authButton" type="button" onclick="showAuthModal('login')">
                         <i class="fas fa-sign-in-alt"></i>

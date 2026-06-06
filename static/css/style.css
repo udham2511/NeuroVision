@@ -46,19 +46,6 @@
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-display: 'Space Grotesk', sans-serif;
 }
-/* ============================================================
-   NEUROSCAN AI — DARK MODE PATCH
-   Drop this block BEFORE the existing dark-mode rules in
-   style.css (replace the old [data-theme="dark"] block entirely).
-
-   Strategy
-   ────────
-   • CSS custom properties on [data-theme="dark"] drive everything.
-   • !important only where an inline style or a very specific
-     light-mode rule cannot be overridden any other way.
-   • Every surface reported as "still white" is explicitly covered.
-   ============================================================ */
-
 
 /* ────────────────────────────────────────────────────────────
    1. DARK-MODE DESIGN TOKENS
@@ -208,9 +195,102 @@
     cursor: pointer;
     transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
 }
+
+
 .theme-toggle:hover {
-    background: #e5e7eb;
-    transform: rotate(15deg) scale(1.05);
+    transform: scale(1.08);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: var(--dm-bg-overlay);
+    border-color: var(--dm-accent);
+    transform: scale(1.08);
+}
+
+.theme-toggle:hover .nn-center {
+    filter: drop-shadow(0 0 6px #7aa2ff);
+}
+
+.theme-toggle:hover .nn-node {
+    stroke: #7aa2ff;
+} 
+
+/*new*/
+.theme-network-icon {
+    overflow: visible;
+}
+
+.nn-edge {
+    stroke: #64748b;
+    stroke-width: 1.2;
+    transition: all 0.3s ease;
+}
+
+.nn-node {
+    fill: #e2e8f0;
+    stroke: #7aa2ff;
+    stroke-width: 1.5;
+    transform-origin: center;
+    transition: all 0.25s ease;
+}
+
+.nn-center {
+    fill: #7aa2ff;
+    transition: all 0.25s ease;
+}
+
+[data-theme="dark"] .nn-edge {
+    stroke: #475569;
+}
+
+[data-theme="dark"] .nn-node {
+    fill: #334155;
+    stroke: #7aa2ff;
+}
+
+[data-theme="dark"] .nn-center {
+    fill: #7aa2ff;
+}
+
+@keyframes nodePulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes centerPulse {
+
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px #7aa2ff);
+    }
+
+    50% {
+        transform: scale(1.6);
+        filter: drop-shadow(0 0 12px #7aa2ff);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px #7aa2ff);
+    }
+}
+
+.pulse {
+    animation: nodePulse 0.2s ease;
+}
+
+.center-pulse {
+    animation: centerPulse 0.25s ease;
 }
 
 
