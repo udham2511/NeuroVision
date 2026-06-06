@@ -54,7 +54,7 @@
 [data-theme="dark"] {
     /* Base surfaces */
     --dm-bg-base:        #0f172a;   /* page background             */
-    --dm-bg-raised:      #162033;   /* cards, panels               */
+    --dm-bg-raised:      #1b2945;   /* cards, panels               */
     --dm-bg-elevated:    #1e293b;   /* inputs, secondary surfaces  */
     --dm-bg-overlay:     #243552;   /* hover / active states       */
 
@@ -99,8 +99,23 @@
 [data-theme="dark"] .hero-section              { background: var(--dm-bg-base); }
 [data-theme="dark"] .about-section             { background: linear-gradient(180deg, #0f172a 0%, #0d1b2e 50%, #0f172a 100%); }
 [data-theme="dark"] .features-section,
-[data-theme="dark"] .features-section-v2       { background: linear-gradient(180deg, #0f172a 0%, #111827 50%, #0f172a 100%); }
-[data-theme="dark"] .how-it-works-section      { background: linear-gradient(180deg, #0f172a 0%, #111827 50%, #0f172a 100%); }
+[data-theme="dark"] .features-section-v2 {
+    background: linear-gradient(
+        180deg,
+        #0f172a 0%,
+        #172554 50%,
+        #0f172a 100%
+    );
+}
+
+[data-theme="dark"] .how-it-works-section {
+    background: linear-gradient(
+        180deg,
+        #0f172a 0%,
+        #172554 50%,
+        #0f172a 100%
+    );
+}
 [data-theme="dark"] .scan-section,
 [data-theme="dark"] .scan-section-v2           { background: var(--dm-bg-base); }
 [data-theme="dark"] .stats-section             { background: var(--dm-bg-base); }
@@ -110,7 +125,11 @@
     background: linear-gradient(180deg, #0f172a 0%, #0d1b2e 50%, #0f172a 100%);
 }
 [data-theme="dark"] .architecture-section {
-    background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
+    background: linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #172554 100%
+    );
 }
 
 
