@@ -1081,10 +1081,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Super smooth scrolling for all elements */
-*, *::before, *::after {
-    scroll-behavior: smooth;
-}
+/* scroll-behavior is set on html only — see performance.css */
 
 /* === Typography === */
 h1, h2, h3, h4, h5, h6 {
