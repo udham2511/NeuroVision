@@ -407,6 +407,8 @@ image_ids, masks, has_mask = prediction(test_df, model, model_seg, use_tta=False
 
 ## Contributors
 
+<!-- CONTRIBUTORS_START -->
+
 <a href="https://github.com/Ashwitha-Ramesh"><img src="https://github.com/Ashwitha-Ramesh.png" width="48px" title="Ashwitha-Ramesh" style="border-radius:50%;margin:4px;" /></a>
 <a href="https://github.com/LIANNAKA"><img src="https://github.com/LIANNAKA.png" width="48px" title="LIANNAKA" style="border-radius:50%;margin:4px;" /></a>
 <a href="https://github.com/Sujan075"><img src="https://github.com/Sujan075.png" width="48px" title="Sujan075" style="border-radius:50%;margin:4px;" /></a>
@@ -415,6 +417,11 @@ image_ids, masks, has_mask = prediction(test_df, model, model_seg, use_tta=False
 <a href="https://github.com/jamunatg2006-sys"><img src="https://github.com/jamunatg2006-sys.png" width="48px" title="jamunatg2006-sys" style="border-radius:50%;margin:4px;" /></a>
 <a href="https://github.com/kadiashailee-devias"><img src="https://github.com/kadiashailee-devias.png" width="48px" title="kadiashailee-devias" style="border-radius:50%;margin:4px;" /></a>
 <a href="https://github.com/shambavi2007"><img src="https://github.com/shambavi2007.png" width="48px" title="shambavi2007" style="border-radius:50%;margin:4px;" /></a>
+
+<!-- CONTRIBUTORS_END -->
+
+Updates automatically as new contributors merge pull requests. 
+Want to see your avatar here? start contributing.
 
 ---
 
