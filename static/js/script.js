@@ -24,6 +24,7 @@ let uploadedFile = null;
 let currentResults = null;
 let isAnalyzing = false;
 let loadingProgressInterval = null;
+const predictionCache = new Map();
 const analyzeButtonIdleHTML = `
     <span class="btn-content">
         <i class="fas fa-microscope"></i>
@@ -318,6 +319,16 @@ async function handleAnalyze() {
     formData.append('file', uploadedFile);
     
     try {
+        // Check cache
+        const cacheKey = `${uploadedFile.name}_${uploadedFile.size}_${uploadedFile.lastModified}`;
+        if (predictionCache.has(cacheKey)) {
+            currentResults = predictionCache.get(cacheKey);
+            setTimeout(() => {
+                showResults(currentResults);
+            }, 1000); // Maintain artificial delay for UX
+            return;
+        }
+
         // Make API request
         const response = await fetch(`${API_BASE_URL}/api/predict`, {
             method: 'POST',
@@ -337,6 +348,7 @@ async function handleAnalyze() {
         
         const results = await response.json();
         currentResults = results;
+        predictionCache.set(cacheKey, results);
         
         // Show results
         setTimeout(() => {
