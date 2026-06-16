@@ -10,6 +10,7 @@
     --galaxy: #081F5C;         /* Navy Blue */
     --milky-way: #FFF9F0;      /* Cream */
     --sky: #D0E3FF;            /* Sky Blue */
+    --teal: #008080;
     
     /* Functional Colors */
     --success: #10b981;
@@ -625,6 +626,11 @@
 [data-theme="dark"] .processing-pipeline {
     background: var(--dm-bg-raised);
     box-shadow: var(--dm-shadow-lg);
+}
+[data-theme="dark"] .pipeline-mega-stage {
+    background: var(--dm-bg-raised);
+    border-color: var(--dm-border-mid);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .3);
 }
 
 /* ── Tech-Details Grid (card-content) ────────────────────── */
@@ -4225,7 +4231,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
     overflow-x: auto;
     padding: 2rem 0;
     margin-bottom: 2rem;
@@ -4236,7 +4242,10 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 160px;
+    justify-content: center;
+    height: -webkit-fill-available;
+    gap: 1rem;
+    min-width: 200px;
     padding: 1.5rem;
     background: linear-gradient(180deg, #f8fafc, #f1f5f9);
     border-radius: 1.5rem;
@@ -4282,13 +4291,21 @@ section {
     background: linear-gradient(135deg, #f59e0b, #d97706);
 }
 
+.pipeline-mega-stage .preprocess-steps-mini {
+    font-size: 14px;
+    text-align: center;
+}
+
 .stage-icon-large {
-    width: 80px;
-    height: 80px;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.stage-tooltip {
+    font-size: 14px;
+    text-align: center;
 }
 
 /* MRI Scan 3D Visual */
